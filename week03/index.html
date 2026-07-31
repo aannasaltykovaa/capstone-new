@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Dark Futuristic Week 03 semantic structural frame."
+  >
+
+  <title>Dark Futuristic | Week 03</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#catalog">
+    Skip to catalog
+  </a>
+
+  <header class="site-header">
+    <a class="brand" href="../index.html">
+      Dark Futuristic
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <a href="#catalog">Catalog</a>
+      <a href="#filters">Filters</a>
+      <a href="../week02/index.html">Design Tokens</a>
+    </nav>
+
+    <button
+      class="theme-toggle"
+      type="button"
+      aria-pressed="true"
+      aria-label="Switch to light mode"
+    >
+      <span class="theme-toggle__label">Dark mode</span>
+    </button>
+  </header>
+
+  <section class="layout-frame">
+    <aside id="filters" class="filter-rail" aria-labelledby="filter-heading">
+      <header class="rail-header">
+        <p class="eyebrow">Week 03</p>
+        <h2 id="filter-heading">Filter Rail</h2>
+      </header>
+
+      <nav class="filter-nav" aria-label="Game catalog filters">
+        <a href="#genre-frame">Genre</a>
+        <a href="#platform-frame">Platform</a>
+        <a href="#rating-frame">Rating</a>
+        <a href="#release-frame">Release</a>
+      </nav>
+
+      <section class="rail-status" aria-labelledby="status-heading">
+        <h3 id="status-heading">Frame Status</h3>
+        <p>Semantic layout active</p>
+      </section>
+    </aside>
+
+    <main id="catalog" class="catalog">
+      <header class="catalog-header">
+        <p class="eyebrow">Archetype C</p>
+        <h1>Game Discovery Catalog</h1>
+      </header>
+
+      <section class="catalog-grid" aria-label="Catalog layout zones">
+        <section id="genre-frame" class="catalog-frame">
+          <h2>Featured Area</h2>
+        </section>
+
+        <section id="platform-frame" class="catalog-frame">
+          <h2>Catalog Grid</h2>
+        </section>
+
+        <section id="rating-frame" class="catalog-frame">
+          <h2>Comparison Area</h2>
+        </section>
+
+        <section id="release-frame" class="catalog-frame">
+          <h2>Discovery Panel</h2>
+        </section>
+      </section>
+    </main>
+  </section>
+
+  <footer class="site-footer">
+    <p>Dark Futuristic · Structural Frame</p>
+
+    <nav aria-label="Secondary navigation">
+      <a href="../index.html">Milestone Directory</a>
+      <a href="../week02/index.html">Week 02</a>
+    </nav>
+  </footer>
+
+  <script>
+    const root = document.documentElement;
+    const toggle = document.querySelector(".theme-toggle");
+    const label = document.querySelector(".theme-toggle__label");
+
+    toggle.addEventListener("click", () => {
+      const nextTheme =
+        root.dataset.theme === "dark" ? "light" : "dark";
+
+      root.dataset.theme = nextTheme;
+
+      const darkModeActive = nextTheme === "dark";
+
+      toggle.setAttribute(
+        "aria-pressed",
+        String(darkModeActive)
+      );
+
+      toggle.setAttribute(
+        "aria-label",
+        darkModeActive
+          ? "Switch to light mode"
+          : "Switch to dark mode"
+      );
+
+      label.textContent =
+        darkModeActive ? "Dark mode" : "Light mode";
+    });
+  </script>
+</body>
+</html>
