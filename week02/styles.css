@@ -1,0 +1,495 @@
+/* ==================================================
+   WEEK 02 DESIGN TOKENS
+   Dark Futuristic Video Game Curation Portal
+   ================================================== */
+
+:root {
+  color-scheme: light dark;
+
+  /* Brand colors */
+  --color-primary: oklch(90% 0.20 102);
+  --color-secondary: oklch(78% 0.16 208);
+  --color-accent: oklch(66% 0.27 345);
+
+  /* Light-mode colors */
+  --light-background: oklch(97% 0.01 100);
+  --light-surface: oklch(93% 0.02 100);
+  --light-text: oklch(20% 0.02 260);
+  --light-muted: oklch(43% 0.03 260);
+  --light-border: oklch(78% 0.04 230);
+
+  /* Dark-mode colors */
+  --dark-background: oklch(14% 0.02 260);
+  --dark-surface: oklch(20% 0.03 260);
+  --dark-text: oklch(94% 0.01 100);
+  --dark-muted: oklch(74% 0.03 240);
+  --dark-border: oklch(46% 0.10 215);
+
+  /*
+    Light mode:
+    background L = 97%
+    text L = 20%
+    approximate contrast ratio = 16.6:1
+
+    Dark mode:
+    background L = 14%
+    text L = 94%
+    approximate contrast ratio = 16.7:1
+
+    Both exceed the WCAG AA minimum of 4.5:1
+    for normal text.
+  */
+
+  /* Active theme defaults */
+  --color-background: var(--dark-background);
+  --color-surface: var(--dark-surface);
+  --color-text: var(--dark-text);
+  --color-muted: var(--dark-muted);
+  --color-border: var(--dark-border);
+
+  /* Fluid typography */
+  --size-base: 1rem;
+
+  --size-heading-md:
+    clamp(1.25rem, 1.08rem + 0.75vw, 1.75rem);
+
+  /*
+    Required title scale:
+    minimum = 1.75rem at 375px
+    maximum = 3rem at 1440px
+
+    slope:
+    (48 - 28) / (1440 - 375)
+    = 20 / 1065
+    = 0.01878
+
+    vw coefficient:
+    0.01878 × 100
+    = 1.878vw
+
+    intercept:
+    28 - (0.01878 × 375)
+    = 20.96px
+    = approximately 1.31rem
+  */
+  --size-heading-lg:
+    clamp(1.75rem, 1.31rem + 1.878vw, 3rem);
+
+  /* Relative spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+
+  --content-width: 68rem;
+  --border-radius: 0.5rem;
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+
+  --color-background: var(--light-background);
+  --color-surface: var(--light-surface);
+  --color-text: var(--light-text);
+  --color-muted: var(--light-muted);
+  --color-border: var(--light-border);
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-background: var(--dark-background);
+  --color-surface: var(--dark-surface);
+  --color-text: var(--dark-text);
+  --color-muted: var(--dark-muted);
+  --color-border: var(--dark-border);
+}
+
+/* ==================================================
+   BASE
+   ================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  color: var(--color-text);
+  background: var(--color-background);
+  font-size: var(--size-base);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 0.2rem solid var(--color-primary);
+  outline-offset: 0.2rem;
+}
+
+code {
+  font-family:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    monospace;
+}
+
+.skip-link {
+  position: fixed;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  z-index: 10;
+  padding: var(--space-sm) var(--space-md);
+  color: var(--dark-background);
+  background: var(--color-primary);
+  font-weight: 700;
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* ==================================================
+   HEADER
+   ================================================== */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding: var(--space-md) max(
+    var(--space-md),
+    calc((100% - var(--content-width)) / 2)
+  );
+  border-bottom: 1px solid var(--color-border);
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.theme-toggle {
+  padding: var(--space-sm) var(--space-md);
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}
+
+/* ==================================================
+   PAGE
+   ================================================== */
+
+.page {
+  width: min(
+    calc(100% - (2 * var(--space-md))),
+    var(--content-width)
+  );
+  margin-inline: auto;
+}
+
+.page-header {
+  padding-block: var(--space-2xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.eyebrow {
+  margin: 0 0 var(--space-sm);
+  color: var(--color-primary);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 18ch;
+  margin-bottom: 0;
+  font-size: var(--size-heading-lg);
+  line-height: 1.05;
+}
+
+h2 {
+  margin-bottom: var(--space-lg);
+  font-size: var(--size-heading-md);
+  line-height: 1.2;
+}
+
+h3 {
+  margin-bottom: var(--space-xs);
+  font-size: 1rem;
+}
+
+.token-section {
+  padding-block: var(--space-2xl);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* ==================================================
+   COLOR TOKENS
+   ================================================== */
+
+.color-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: var(--space-md);
+}
+
+.color-token {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  align-items: center;
+  gap: var(--space-md);
+  min-width: 0;
+  padding: var(--space-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+}
+
+.color-token p,
+.color-token code {
+  display: block;
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.color-token p {
+  margin-top: var(--space-xs);
+  color: var(--color-muted);
+}
+
+.swatch {
+  width: 4rem;
+  aspect-ratio: 1;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+}
+
+.swatch--primary {
+  background: var(--color-primary);
+}
+
+.swatch--secondary {
+  background: var(--color-secondary);
+}
+
+.swatch--accent {
+  background: var(--color-accent);
+}
+
+.swatch--background {
+  background: var(--color-background);
+}
+
+.swatch--surface {
+  background: var(--color-surface);
+}
+
+.swatch--text {
+  background: var(--color-text);
+}
+
+.mode-grid {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.mode-example {
+  padding: var(--space-lg);
+  border-radius: var(--border-radius);
+}
+
+.mode-example p:last-child {
+  margin-bottom: 0;
+}
+
+.mode-example--light {
+  color: var(--light-text);
+  background: var(--light-background);
+  border: 1px solid var(--light-border);
+}
+
+.mode-example--dark {
+  color: var(--dark-text);
+  background: var(--dark-background);
+  border: 1px solid var(--dark-border);
+}
+
+/* ==================================================
+   TYPOGRAPHY TOKENS
+   ================================================== */
+
+.type-list {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.type-token {
+  padding: var(--space-lg);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+}
+
+.type-token > p:last-child {
+  margin-bottom: 0;
+  color: var(--color-muted);
+  overflow-wrap: anywhere;
+}
+
+.sample-heading-lg {
+  margin-block: var(--space-md);
+  font-size: var(--size-heading-lg);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.sample-heading-md {
+  margin-block: var(--space-md);
+  font-size: var(--size-heading-md);
+  font-weight: 750;
+  line-height: 1.15;
+}
+
+.sample-base {
+  margin-block: var(--space-md);
+  font-size: var(--size-base);
+}
+
+.formula-note {
+  margin-top: var(--space-lg);
+  padding: var(--space-lg);
+  background: var(--color-surface);
+  border-left: 0.25rem solid var(--color-secondary);
+}
+
+.formula-note p {
+  margin-bottom: var(--space-xs);
+}
+
+.formula-note p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==================================================
+   SPACING TOKENS
+   ================================================== */
+
+.spacing-list {
+  display: grid;
+  gap: var(--space-sm);
+}
+
+.spacing-token {
+  display: grid;
+  grid-template-columns: minmax(8rem, 11rem) 1fr auto;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+}
+
+.space-demo {
+  display: block;
+  height: 1rem;
+  max-width: 100%;
+  background: var(--color-primary);
+}
+
+.space-demo--xs {
+  width: calc(var(--space-xs) * 5);
+}
+
+.space-demo--sm {
+  width: calc(var(--space-sm) * 5);
+}
+
+.space-demo--md {
+  width: calc(var(--space-md) * 5);
+}
+
+.space-demo--lg {
+  width: calc(var(--space-lg) * 5);
+}
+
+/* ==================================================
+   FOOTER
+   ================================================== */
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-md);
+  width: min(
+    calc(100% - (2 * var(--space-md))),
+    var(--content-width)
+  );
+  margin-inline: auto;
+  padding-block: var(--space-lg);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* ==================================================
+   RESPONSIVE
+   ================================================== */
+
+@media (max-width: 38rem) {
+  .site-header,
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .spacing-token {
+    grid-template-columns: 1fr;
+  }
+}
