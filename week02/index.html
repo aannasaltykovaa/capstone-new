@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Dark Futuristic Week 02 design system token page."
+  >
+
+  <title>Dark Futuristic | Week 02</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main-content">
+    Skip to main content
+  </a>
+
+  <header class="site-header">
+    <a class="brand" href="../index.html">
+      Dark Futuristic
+    </a>
+
+    <button
+      class="theme-toggle"
+      type="button"
+      aria-pressed="true"
+      aria-label="Switch to light mode"
+    >
+      <span class="theme-toggle__label">Dark mode</span>
+    </button>
+  </header>
+
+  <main id="main-content" class="page">
+    <header class="page-header">
+      <p class="eyebrow">Week 02 · Archetype C</p>
+
+      <h1>Video Game Curation Portal</h1>
+    </header>
+
+    <section class="token-section" aria-labelledby="colors-heading">
+      <h2 id="colors-heading">Color Tokens</h2>
+
+      <div class="color-grid">
+        <div class="color-token">
+          <span
+            class="swatch swatch--primary"
+            aria-hidden="true"
+          ></span>
+
+          <div>
+            <h3>Primary</h3>
+            <code>--color-primary</code>
+            <p>oklch(90% 0.20 102)</p>
+          </div>
+        </div>
+
+        <div class="color-token">
+          <span
+            class="swatch swatch--secondary"
+            aria-hidden="true"
+          ></span>
+
+          <div>
+            <h3>Secondary</h3>
+            <code>--color-secondary</code>
+            <p>oklch(78% 0.16 208)</p>
+          </div>
+        </div>
+
+        <div class="color-token">
+          <span
+            class="swatch swatch--accent"
+            aria-hidden="true"
+          ></span>
+
+          <div>
+            <h3>Accent</h3>
+            <code>--color-accent</code>
+            <p>oklch(66% 0.27 345)</p>
+          </div>
+        </div>
+
+        <div class="color-token">
+          <span
+            class="swatch swatch--background"
+            aria-hidden="true"
+          ></span>
+
+          <div>
+            <h3>Background</h3>
+            <code>--color-background</code>
+          </div>
+        </div>
+
+        <div class="color-token">
+          <span
+            class="swatch swatch--surface"
+            aria-hidden="true"
+          ></span>
+
+          <div>
+            <h3>Surface</h3>
+            <code>--color-surface</code>
+          </div>
+        </div>
+
+        <div class="color-token">
+          <span
+            class="swatch swatch--text"
+            aria-hidden="true"
+          ></span>
+
+          <div>
+            <h3>Text</h3>
+            <code>--color-text</code>
+          </div>
+        </div>
+      </div>
+
+      <div class="mode-grid">
+        <article class="mode-example mode-example--light">
+          <h3>Light Mode</h3>
+          <p>Background L: 97%</p>
+          <p>Text L: 20%</p>
+          <p>Contrast: approximately 16.6:1</p>
+        </article>
+
+        <article class="mode-example mode-example--dark">
+          <h3>Dark Mode</h3>
+          <p>Background L: 14%</p>
+          <p>Text L: 94%</p>
+          <p>Contrast: approximately 16.7:1</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="token-section" aria-labelledby="type-heading">
+      <h2 id="type-heading">Typography Tokens</h2>
+
+      <div class="type-list">
+        <div class="type-token">
+          <code>--size-heading-lg</code>
+
+          <p class="sample-heading-lg">
+            Main Title
+          </p>
+
+          <p>
+            clamp(1.75rem, 1.31rem + 1.878vw, 3rem)
+          </p>
+        </div>
+
+        <div class="type-token">
+          <code>--size-heading-md</code>
+
+          <p class="sample-heading-md">
+            Section Heading
+          </p>
+
+          <p>
+            clamp(1.25rem, 1.08rem + 0.75vw, 1.75rem)
+          </p>
+        </div>
+
+        <div class="type-token">
+          <code>--size-base</code>
+
+          <p class="sample-base">
+            Base body text
+          </p>
+
+          <p>1rem</p>
+        </div>
+      </div>
+
+      <aside class="formula-note" aria-labelledby="formula-heading">
+        <h3 id="formula-heading">Fluid Scale Calculation</h3>
+
+        <p>
+          Minimum: 1.75rem at 375px
+        </p>
+
+        <p>
+          Maximum: 3rem at 1440px
+        </p>
+
+        <p>
+          Slope: (48px − 28px) ÷ (1440px − 375px)
+          = 0.01878
+        </p>
+
+        <p>
+          Viewport coefficient: 0.01878 × 100
+          = 1.878vw
+        </p>
+
+        <p>
+          Intercept: 28px − (0.01878 × 375px)
+          = 20.96px ≈ 1.31rem
+        </p>
+      </aside>
+    </section>
+
+    <section class="token-section" aria-labelledby="spacing-heading">
+      <h2 id="spacing-heading">Spacing Tokens</h2>
+
+      <div class="spacing-list">
+        <div class="spacing-token">
+          <code>--space-xs</code>
+          <span class="space-demo space-demo--xs"></span>
+          <strong>0.5rem</strong>
+        </div>
+
+        <div class="spacing-token">
+          <code>--space-sm</code>
+          <span class="space-demo space-demo--sm"></span>
+          <strong>0.75rem</strong>
+        </div>
+
+        <div class="spacing-token">
+          <code>--space-md</code>
+          <span class="space-demo space-demo--md"></span>
+          <strong>1rem</strong>
+        </div>
+
+        <div class="spacing-token">
+          <code>--space-lg</code>
+          <span class="space-demo space-demo--lg"></span>
+          <strong>1.5rem</strong>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Dark Futuristic · Week 02</p>
+
+    <a href="../index.html">
+      Milestone Directory
+    </a>
+  </footer>
+
+  <script>
+    const root = document.documentElement;
+    const toggle = document.querySelector(".theme-toggle");
+    const label = document.querySelector(".theme-toggle__label");
+
+    toggle.addEventListener("click", () => {
+      const nextTheme =
+        root.dataset.theme === "dark" ? "light" : "dark";
+
+      root.dataset.theme = nextTheme;
+
+      const darkModeActive = nextTheme === "dark";
+
+      toggle.setAttribute(
+        "aria-pressed",
+        String(darkModeActive)
+      );
+
+      toggle.setAttribute(
+        "aria-label",
+        darkModeActive
+          ? "Switch to light mode"
+          : "Switch to dark mode"
+      );
+
+      label.textContent =
+        darkModeActive ? "Dark mode" : "Light mode";
+    });
+  </script>
+</body>
+</html>
