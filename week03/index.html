@@ -20,7 +20,7 @@
 
 <body>
   <a class="skip-link" href="#catalog">
-    Skip to catalog
+    Skip to main content
   </a>
 
   <header class="site-header">
@@ -31,7 +31,7 @@
     <nav class="primary-nav" aria-label="Primary navigation">
       <a href="#catalog">Catalog</a>
       <a href="#filters">Filters</a>
-      <a href="../week02/index.html">Design Tokens</a>
+      <a href="../week02/index.html">Week 02</a>
     </nav>
 
     <button
@@ -45,53 +45,65 @@
   </header>
 
   <section class="layout-frame">
-    <aside id="filters" class="filter-rail" aria-labelledby="filter-heading">
+    <aside
+      id="filters"
+      class="filter-rail"
+      aria-labelledby="filters-heading"
+    >
       <header class="rail-header">
-        <p class="eyebrow">Week 03</p>
-        <h2 id="filter-heading">Filter Rail</h2>
+        <h2 id="filters-heading">Filters</h2>
       </header>
 
-      <nav class="filter-nav" aria-label="Game catalog filters">
-        <a href="#genre-frame">Genre</a>
-        <a href="#platform-frame">Platform</a>
-        <a href="#rating-frame">Rating</a>
-        <a href="#release-frame">Release</a>
+      <nav class="filter-nav" aria-label="Catalog filter navigation">
+        <a href="#filter-zone-1">Genre</a>
+        <a href="#filter-zone-2">Platform</a>
+        <a href="#filter-zone-3">Rating</a>
+        <a href="#filter-zone-4">Release</a>
       </nav>
-
-      <section class="rail-status" aria-labelledby="status-heading">
-        <h3 id="status-heading">Frame Status</h3>
-        <p>Semantic layout active</p>
-      </section>
     </aside>
 
-    <main id="catalog" class="catalog">
+    <main
+      id="catalog"
+      class="catalog"
+      aria-labelledby="catalog-heading"
+    >
       <header class="catalog-header">
-        <p class="eyebrow">Archetype C</p>
-        <h1>Game Discovery Catalog</h1>
+        <h1 id="catalog-heading">Game Catalog</h1>
       </header>
 
-      <section class="catalog-grid" aria-label="Catalog layout zones">
-        <section id="genre-frame" class="catalog-frame">
-          <h2>Featured Area</h2>
-        </section>
+      <section
+        class="catalog-grid"
+        aria-label="Catalog structural zones"
+      >
+        <section
+          id="filter-zone-1"
+          class="catalog-frame"
+          aria-label="Featured catalog zone"
+        ></section>
 
-        <section id="platform-frame" class="catalog-frame">
-          <h2>Catalog Grid</h2>
-        </section>
+        <section
+          id="filter-zone-2"
+          class="catalog-frame"
+          aria-label="Main catalog zone"
+        ></section>
 
-        <section id="rating-frame" class="catalog-frame">
-          <h2>Comparison Area</h2>
-        </section>
+        <section
+          id="filter-zone-3"
+          class="catalog-frame"
+          aria-label="Comparison zone"
+        ></section>
 
-        <section id="release-frame" class="catalog-frame">
-          <h2>Discovery Panel</h2>
-        </section>
+        <section
+          id="filter-zone-4"
+          class="catalog-frame"
+          aria-label="Discovery zone"
+        ></section>
       </section>
     </main>
   </section>
 
   <footer class="site-footer">
-    <p>Dark Futuristic · Structural Frame</p>
+    <p>Dark Futuristic · Week 03</p>
 
     <nav aria-label="Secondary navigation">
       <a href="../index.html">Milestone Directory</a>
