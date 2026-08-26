@@ -21,5 +21,15 @@ Review the asymmetric game grid and make sure it does not leave large empty spac
 adjust the featured card’s grid spans at tablet and mobile sizes so the cards stay packed together. Keep the existing design and card hierarchy the
 same. Do not add any unnecessary styling or features.
 
+Week 3:
+prompt used:
+I’m building a curation-style game catalog for my capstone project. Using my existing design and variables, create the main page structure
+with semantic HTML5 elements like header, nav, main, aside, and footer. I want a persistent header, a left sidebar for filters, a main catalog area,
+and a footer. Use CSS Grid or Flexbox to organize the layout, make it fill the viewport height, and keep the spacing, colors, and typography
+consistent with my existing variables. Keep the content simple and focus mainly on the structure.
+#2
+Review my current HTML and CSS and make sure the sidebar and main content stay responsive when the screen gets smaller. Use minmax() so the sidebar
+does not collapse too much or cause horizontal scrolling. Keep the existing layout and design the same.
+
 to view:
 open index.html in browser
