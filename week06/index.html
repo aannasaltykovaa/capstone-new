@@ -10,7 +10,7 @@
 
   <meta
     name="description"
-    content="Dark Futuristic Week 06."
+    content="Dark Futuristic Week 06 container query components."
   >
 
   <title>Dark Futuristic | Week 06</title>
@@ -31,7 +31,7 @@
     <nav class="primary-nav" aria-label="Primary navigation">
       <a href="#catalog">Catalog</a>
       <a href="#filters">Filters</a>
-      <a href="../week03/index.html">Week 03</a>
+      <a href="../week05/index.html">Week 05</a>
     </nav>
 
     <button
@@ -44,7 +44,7 @@
     </button>
   </header>
 
-  <section class="layout-frame">
+  <div class="layout-frame">
     <aside
       id="filters"
       class="filter-rail"
@@ -69,53 +69,96 @@
       aria-labelledby="catalog-heading"
     >
       <header class="catalog-header">
-        <p class="eyebrow">Week 04 · Archetype C</p>
-        <h1 id="catalog-heading">Game Discovery Catalog</h1>
+        <p class="eyebrow">Week 06 · Container Queries</p>
+
+        <h1 id="catalog-heading">
+          Game Discovery Catalog
+        </h1>
       </header>
 
       <section
         class="game-grid"
         aria-label="Game discovery grid"
       >
-        <article id="card-1" class="game-card game-card--hero">
-          <p class="game-card__label">Featured</p>
-          <h2>Neon District</h2>
-          <p>Open-world RPG</p>
-        </article>
+        <div class="game-card-slot game-card-slot--hero">
+          <article id="card-1" class="game-card">
+            <div class="game-card__visual" aria-hidden="true">
+              01
+            </div>
 
-        <article id="card-2" class="game-card">
-          <p class="game-card__label">Action</p>
-          <h2>Zero Protocol</h2>
-          <p>Action adventure</p>
-        </article>
+            <div class="game-card__content">
+              <p class="game-card__label">Featured</p>
+              <h2>Neon District</h2>
+              <p>Open-world RPG</p>
+            </div>
+          </article>
+        </div>
 
-        <article id="card-3" class="game-card">
-          <p class="game-card__label">RPG</p>
-          <h2>Chrome Horizon</h2>
-          <p>Role-playing game</p>
-        </article>
+        <div class="game-card-slot">
+          <article id="card-2" class="game-card">
+            <div class="game-card__visual" aria-hidden="true">
+              02
+            </div>
 
-        <article id="card-4" class="game-card">
-          <p class="game-card__label">Strategy</p>
-          <h2>Grid Command</h2>
-          <p>Strategy game</p>
-        </article>
+            <div class="game-card__content">
+              <p class="game-card__label">Action</p>
+              <h2>Zero Protocol</h2>
+              <p>Action adventure</p>
+            </div>
+          </article>
+        </div>
 
-        <article id="card-5" class="game-card">
-          <p class="game-card__label">Indie</p>
-          <h2>Signal Lost</h2>
-          <p>Indie adventure</p>
-        </article>
+        <div class="game-card-slot">
+          <article id="card-3" class="game-card">
+            <div class="game-card__visual" aria-hidden="true">
+              03
+            </div>
+
+            <div class="game-card__content">
+              <p class="game-card__label">RPG</p>
+              <h2>Chrome Horizon</h2>
+              <p>Role-playing game</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="game-card-slot">
+          <article id="card-4" class="game-card">
+            <div class="game-card__visual" aria-hidden="true">
+              04
+            </div>
+
+            <div class="game-card__content">
+              <p class="game-card__label">Strategy</p>
+              <h2>Grid Command</h2>
+              <p>Strategy game</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="game-card-slot">
+          <article id="card-5" class="game-card">
+            <div class="game-card__visual" aria-hidden="true">
+              05
+            </div>
+
+            <div class="game-card__content">
+              <p class="game-card__label">Indie</p>
+              <h2>Signal Lost</h2>
+              <p>Indie adventure</p>
+            </div>
+          </article>
+        </div>
       </section>
     </main>
-  </section>
+  </div>
 
   <footer class="site-footer">
-    <p>Dark Futuristic · Week 04</p>
+    <p>Dark Futuristic · Week 06</p>
 
     <nav aria-label="Secondary navigation">
       <a href="../index.html">Milestone Directory</a>
-      <a href="../week03/index.html">Week 03</a>
+      <a href="../week05/index.html">Week 05</a>
     </nav>
   </footer>
 
