@@ -1,6 +1,9 @@
 This project is a responsive game catalog.
 Each weekly milestone adds or improves part of the site while keeping the project organized into separate folders.
 
+Week 6:
+Week 5 focused on reorganizing the stylesheet with cascade layers and native nesting. Week 6 keeps that structure but adds container queries, so individual cards can change their layout based on the size of the container they are placed in.
+
 Week 5:
 prompt used: 
 I need to update my CSS without changing how the website looks. 
