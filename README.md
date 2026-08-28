@@ -1,6 +1,12 @@
 This project is a responsive game catalog.
 Each weekly milestone adds or improves part of the site while keeping the project organized into separate folders.
 
+Week 7:
+scroll-driven animations were added using transfrom and opacity for better efficiency. 
+animation-timeline: scroll(root) is used for progress bar
+animation-timeline(: view() is used for the cards
+added shadows on hover and card scale(1.02)
+
 Week 6:
 Week 5 focused on reorganizing the stylesheet with cascade layers and native nesting. Week 6 keeps that structure but adds container queries, so individual cards can change their layout based on the size of the container they are placed in.
 
