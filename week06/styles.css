@@ -435,8 +435,8 @@
 
     clip-path: var(--clip-large);
 
-    /* allows a copied card to respond to sidebar width */
-    container-type: inline-size;
+    /* container context for the placement test */
+    container: sidebar / inline-size;
 
     &::before {
       position: absolute;
@@ -564,14 +564,16 @@
     }
   }
 
-  /* each card slot becomes its own container */
+  /*
+    each card slot is its own container.
+    the card reacts to this width instead of viewport width.
+  */
   .game-card-slot {
     min-width: 0;
 
-    container-type: inline-size;
+    container: card-slot / inline-size;
   }
 
-  /* keeps the asymmetric featured-card layout */
   .game-card-slot--hero {
     grid-column: span 2;
     grid-row: span 2;
@@ -587,7 +589,10 @@
     }
   }
 
-  /* narrow container layout */
+  /*
+    narrow container is the default.
+    visual sits above the text.
+  */
   .game-card {
     position: relative;
 
@@ -635,7 +640,7 @@
       display: grid;
       place-items: center;
 
-      min-height: 6rem;
+      min-height: 7rem;
 
       background:
         linear-gradient(
@@ -714,8 +719,11 @@
     }
   }
 
-  /* wide containers switch the card to a horizontal layout */
-  @container (min-width: 500px) {
+  /*
+    wide container layout.
+    this replaces viewport-based card alignment.
+  */
+  @container card-slot (min-width: 500px) {
     .game-card {
       flex-direction: row;
       align-items: stretch;
