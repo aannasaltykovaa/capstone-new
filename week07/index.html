@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Dark Futuristic Week 07 micro-interactions and scroll-driven enhancements."
+  >
+
+  <title>Dark Futuristic | Week 07</title>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div
+    class="scroll-progress-bar"
+    aria-hidden="true"
+  ></div>
+
+  <a class="skip-link" href="#catalog">
+    Skip to main content
+  </a>
+
+  <header class="site-header">
+    <a class="brand" href="../index.html">
+      Dark Futuristic
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <a href="#catalog">Catalog</a>
+      <a href="#filters">Filters</a>
+      <a href="../week06/index.html">Week 06</a>
+    </nav>
+
+    <button
+      class="theme-toggle"
+      type="button"
+      aria-pressed="true"
+      aria-label="Switch to light mode"
+    >
+      <span class="theme-toggle__label">Dark mode</span>
+    </button>
+  </header>
+
+  <div class="layout-frame">
+    <aside
+      id="filters"
+      class="filter-rail"
+      aria-labelledby="filters-heading"
+    >
+      <header class="rail-header">
+        <h2 id="filters-heading">Filters</h2>
+      </header>
+
+      <nav class="filter-nav" aria-label="Game catalog filters">
+        <a href="#card-1">Featured</a>
+        <a href="#card-2">Action</a>
+        <a href="#card-3">RPG</a>
+        <a href="#card-4">Strategy</a>
+        <a href="#card-5">Indie</a>
+      </nav>
+    </aside>
+
+    <main
+      id="catalog"
+      class="catalog"
+      aria-labelledby="catalog-heading"
+    >
+      <header class="catalog-header">
+        <p class="eyebrow">
+          Week 07 · Micro-Interactions
+        </p>
+
+        <h1 id="catalog-heading">
+          Game Discovery Catalog
+        </h1>
+      </header>
+
+      <section
+        class="game-grid"
+        aria-label="Game discovery grid"
+      >
+        <div class="game-card-slot game-card-slot--hero">
+          <article
+            id="card-1"
+            class="game-card"
+            tabindex="0"
+          >
+            <div class="game-card__visual" aria-hidden="true">
+              01
+            </div>
+
+            <div class="game-card__content">
+              <p class="game-card__label">Featured</p>
+              <h2>Neon District</h2>
+              <p>Open-world RPG</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="game-card-slot">
+          <article
+            id="card-2"
+            class="game-card"
+            tabindex="0"
+          >
+            <div class="game-card__visual" aria-hidden="true">
+              02
+            </div>
+
+            <div class="game-card__content">
+              <p class="game-card__label">Action</p>
+              <h2>Zero Protocol</h2>
+              <p>Action adventure</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="game-card-slot">
+          <article
+            id="card-3"
+            class="game-card"
+            tabindex="0"
+          >
+            <div class="game-card__visual" aria-hidden="true">
+              03
+            </div>
+
+            <div class="game-card__content">
+              <p class="game-card__label">RPG</p>
+              <h2>Chrome Horizon</h2>
+              <p>Role-playing game</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="game-card-slot">
+          <article
+            id="card-4"
+            class="game-card"
+            tabindex="0"
+          >
+            <div class="game-card__visual" aria-hidden="true">
+              04
+            </div>
+
+            <div class="game-card__content">
+              <p class="game-card__label">Strategy</p>
+              <h2>Grid Command</h2>
+              <p>Strategy game</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="game-card-slot">
+          <article
+            id="card-5"
+            class="game-card"
+            tabindex="0"
+          >
+            <div class="game-card__visual" aria-hidden="true">
+              05
+            </div>
+
+            <div class="game-card__content">
+              <p class="game-card__label">Indie</p>
+              <h2>Signal Lost</h2>
+              <p>Indie adventure</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>Dark Futuristic · Week 07</p>
+
+    <nav aria-label="Secondary navigation">
+      <a href="../index.html">Milestone Directory</a>
+      <a href="../week06/index.html">Week 06</a>
+    </nav>
+  </footer>
+
+  <script>
+    const root = document.documentElement;
+    const toggle = document.querySelector(".theme-toggle");
+    const label = document.querySelector(".theme-toggle__label");
+
+    toggle.addEventListener("click", () => {
+      const nextTheme =
+        root.dataset.theme === "dark" ? "light" : "dark";
+
+      root.dataset.theme = nextTheme;
+
+      const darkModeActive = nextTheme === "dark";
+
+      toggle.setAttribute(
+        "aria-pressed",
+        String(darkModeActive)
+      );
+
+      toggle.setAttribute(
+        "aria-label",
+        darkModeActive
+          ? "Switch to light mode"
+          : "Switch to dark mode"
+      );
+
+      label.textContent =
+        darkModeActive ? "Dark mode" : "Light mode";
+    });
+  </script>
+</body>
+</html>
